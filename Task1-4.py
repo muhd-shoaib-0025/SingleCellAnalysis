@@ -92,8 +92,6 @@ sc.pp.neighbors(fibroblast_subset, n_neighbors=10, n_pcs=30)
 sc.tl.leiden(fibroblast_subset)
 sc.tl.umap(fibroblast_subset, random_state=42)
 sc.pl.umap(fibroblast_subset, color='leiden', legend_loc='on data', title='Fibroblast Sub-Clustering')
-plt.tight_layout()
-plt.show()
 
 #Task 2.2. Use Harmony to batch-effect correct just the fibroblasts sub-cluster.
 #Report the clustering before and after harmony batch-effect correction as UMAP.
@@ -106,8 +104,6 @@ sc.pp.neighbors(fibroblast_subset, n_neighbors=10, n_pcs=30)
 sc.tl.leiden(fibroblast_subset)
 sc.tl.umap(fibroblast_subset, random_state=42)
 sc.pl.umap(fibroblast_subset, color='leiden', title='Fibroblast Sub-Clustering After Harmony')
-plt.tight_layout()
-plt.show()
 
 #Task 2.3. What are the usual steps that one needs to do for batch-effect correction?
 #(Hint: look at harmony tutorials, Scanpy-harmony tutorials, MI Human paper, and https://www.nature.com/articles/s41592-021-01336-8)
