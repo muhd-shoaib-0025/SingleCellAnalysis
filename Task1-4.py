@@ -16,8 +16,6 @@ dataset_path = args.dataset_path
 #What is the number of cells, number of genes, number of clusters, which column lists disease condition such as IZ, FZ, RZ etc, and number of samples in the dataset?
 
 adata = sc.read(dataset_path)
-random_indices = np.random.randint(0, adata.shape[0], size=10000)
-adata = adata[random_indices, :]
 
 num_genes = adata.n_vars
 num_cells = adata.n_obs
@@ -32,6 +30,9 @@ disease_conditions = adata.obs['major_labl'].unique().tolist()
 print(f'The disease conditions in major_labl column are: {disease_conditions}')
 
 print('The sample column lists the number of samples.')
+
+random_indices = np.random.randint(0, adata.shape[0], size=10000)
+adata = adata[random_indices, :]
 
 #Task 1.2. Is the data raw counts or log-normalized?
 #If the data is not log-normalized, please find the layer that contains raw counts and set it as default for further analyses.
